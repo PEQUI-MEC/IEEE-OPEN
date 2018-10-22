@@ -1,7 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 #-*-coding:UTF-8-*-
 
 import rospy
+import sys
+sys.path.remove('/opt/ros/kinetic/lib/python2.7/dist-packages')
 import cv2
 import numpy as np
 

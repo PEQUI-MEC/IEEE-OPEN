@@ -1,6 +1,7 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
+#-*- coding: UTF-8 -*-
 
-from openpkg.srv import *
+from ieee_open.srv import *
 import rospy
 
 def handle_add_two_ints(req):

@@ -1,9 +1,9 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
 import sys
 import rospy
-from openpkg.srv import *
+from ieee_open.srv import *
 
 def add_two_ints_client(x, y):
     rospy.wait_for_service('add_two_ints')
