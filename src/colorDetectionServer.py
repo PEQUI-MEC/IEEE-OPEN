@@ -33,6 +33,7 @@ def loadValues():
                 # for i in range (1,len(content)):
                 #     blue_min.append(float(content[i]))
                 blue_min = np.array([content[1], content[2], content[3]])
+                print(blue_min)
 
             elif content[0] == 'BLUE_MAX':
                 # for i in range (1,len(content)):
@@ -75,10 +76,12 @@ def handle_detect_color(req):
     frame = cv2.flip(frame,1)   #BGR
     frame = cv2.blur(frame, (5,5),0)
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV) #HSV
+    print(blue_min)
 
     mask_blue = cv2.inRange(hsv, blue_min, blue_max)
     mask_green = cv2.inRange(hsv, green_min, green_max)
     mask_red = cv2.inRange(hsv, red_min, red_max)
+
 
     _, contornosBlue, hierarchyBlue = cv2.findContours(mask_blue.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     _, contornosGreen, hierarchyGreen = cv2.findContours(mask_green.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
