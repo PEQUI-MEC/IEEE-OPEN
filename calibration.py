@@ -152,7 +152,7 @@ def screenCalibration(colorName):
     cv2.destroyAllWindows()
 
 def saveValues():
-    arq = open('/home/open/catkin_ws/src/calibrationColors', 'w')
+    arq = open('/home/open/catkin_ws/src/calibrationColors.txt', 'w')
     text = []
     for i in range(0,3):
         if i is 0:
