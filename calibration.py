@@ -13,7 +13,7 @@ global red_min; global red_max
 global BLUE; BLUE = 'Blue Calibration'
 global GREEN; GREEN = 'Green Calibration'
 global RED; RED = 'Red Calibration'
-cam = cv2.VideoCapture(0)
+cam = cv2.VideoCapture(1)
 
 def callback(value):
     pass
@@ -84,7 +84,7 @@ def screenCalibration(colorName):
                 # cv2.destroyAllWindows()
                 cv2.destroyWindow(BLUE)
                 break
-                
+
     elif colorName is GREEN:
 
         createGreenTrackbar()
@@ -116,7 +116,7 @@ def screenCalibration(colorName):
                 # cv2.destroyAllWindows()
                 cv2.destroyWindow(GREEN)
                 break
-            
+
     elif colorName is RED:
 
         createRedTrackbar()
@@ -152,7 +152,7 @@ def screenCalibration(colorName):
     cv2.destroyAllWindows()
 
 def saveValues():
-    arq = open('/home/open/catkin_ws/src/calibrationColors.txt', 'w')
+    arq = open('/home/vinicius/catkin_ws/src/calibrationColors.txt', 'w')
     text = []
     for i in range(0,3):
         if i is 0:
@@ -193,7 +193,7 @@ def saveValues():
                 text.append(str(x))
                 text.append('\t')
             text.append('\n')
-    
+
     arq.writelines(text)
     arq.close()
 
