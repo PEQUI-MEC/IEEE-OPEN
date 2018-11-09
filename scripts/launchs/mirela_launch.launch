@@ -1,0 +1,5 @@
+<launch>
+    <<node pkg="ieee_open" type="executable" name="executable" />>
+
+    <<node pkg="ieee_open" type="executable" name="executable" />>
+</launch>>
